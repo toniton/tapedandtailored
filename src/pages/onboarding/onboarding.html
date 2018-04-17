@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-slides pager>
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <img class="icon" src="assets/imgs/003-knitting.svg" />
+      </div>
+      <div>
+        <h2>Choose Your Fabric</h2>
+        <p>whether it's sets, reps, weight used, you can track it all with our intuitive interface.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <img class="icon" src="assets/imgs/002-shirt.svg" />
+      </div>
+      <div>
+        <h2>Select your style</h2>
+        <p>we're all in the gym for a reason: goals. set goals for diet and fitness.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <img class="icon" src="assets/imgs/001-drawing.svg" />
+      </div>
+      <div>
+        <h2>Get Measured</h2>
+        <p>inspire and help each other reach fitness and diet goals.</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Categories
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page" padding>
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+  </ng-template>
+  <ion-grid *ngIf="(categories | async); let categories; else loading">
+    <ion-card *ngFor="let category of categories;" (click)="gotoProductList(category)" [@flyInOut]>
+      <img [src]="getImage(category.bannerUrl)" />
+      <div class="card-title">{{ category.name }}</div>
+      <div class="card-subtitle">{{ category.productCount }} Items</div>
+    </ion-card>
+  </ion-grid>
+</ion-content>

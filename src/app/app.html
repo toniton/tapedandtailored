@@ -1,0 +1,35 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Tape & Tailored</ion-title>
+            <ion-buttons end>
+                <button ion-button icon-only>
+                    <ion-icon name="cart"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list no-lines>
+            <button ion-item (click)="openPage(homePage)">
+                Home
+            </button>
+            <button ion-item>
+                Search
+            </button>
+            <button ion-item>
+                Order History
+            </button>
+            <button ion-item>
+                Profile
+            </button>
+            <button ion-item>
+                FAQs
+            </button>
+            <button ion-item (click)="closeMenu()">
+                Close Menu
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

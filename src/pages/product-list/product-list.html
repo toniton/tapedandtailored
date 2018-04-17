@@ -1,0 +1,55 @@
+<!--
+  Generated template for the ProductListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ category.name }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showFilterModal()">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div>
+    <ion-segment [(ngModel)]="selectedCategory">
+      <ion-segment-button [value]="category.id" (click)="switchCategory(category.id)">
+        All
+      </ion-segment-button>
+      <ion-segment-button [value]="subcategory.id" *ngFor="let subcategory of category.children" (click)="switchCategory(subcategory.id)">
+        {{ subcategory.name }}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+</ion-header>
+
+<ion-content>
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+  </ng-template>
+  <div class="product-list" *ngIf="(productList | async); let productList; else loading">
+    <div padding *ngIf="productList.length === 0">
+      <h4>No products available!</h4>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col no-padding col-6 *ngFor="let product of productList">
+          <ion-card (click)="goToDetailsPage(product)">
+            <img [src]="getImage(product.thumbnailUrl)" style="width: 100%; min-height: 20vh;"/>
+            <ion-card-header>
+              {{ product.name }}
+            </ion-card-header>
+            <ion-card-content>
+              <small class="category-name">{{ product.category }}</small>
+              <p class="price">{{ product.price | currency:"NGN":"symbol-narrow" }} </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

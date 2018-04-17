@@ -1,0 +1,64 @@
+page-measurement-tutorial {
+
+    ion-content {
+        position: relative;
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            bottom: 0; 
+            right: 0;
+
+            img.arrow {
+                height: 40px;
+                top: 0;
+                left: 120px;
+                z-index: 999999;
+                transform: translateY(-50%);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .indicator-range {
+                top: 0;
+                left: 160px;
+                z-index: 4;
+                transform: translateY(0);
+                rect {
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+
+            .level-bar {
+                height: 80%;
+                left: 160px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 3;
+            }
+
+            .indicator-range, .level-bar {
+                width: 80px;
+            }
+
+            img.arrow, .indicator-range, .level-bar {
+                position: absolute;
+            }
+
+            .footnote {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 15px 30px;
+                text-align: center;
+                font-weight: 400;
+            }
+
+        }
+
+    }
+}

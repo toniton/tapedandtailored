@@ -1,0 +1,39 @@
+page-map {
+    position: relative;
+    #map_canvas {
+        width: 100%;
+        height: auto;
+        background-color:rgba(0,0,0,0.0);
+    }
+    .details {
+        position: absolute;
+        background: rgb(0, 0, 0);
+        width: 100%;
+        height: 30%;
+        // top: 80%;
+        z-index: 1;
+        color: #f7f7f7;
+        overflow: hidden;
+
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 16px;
+            top: 20px;
+            background: #e4dddd;
+            border-radius: 50%;
+        }
+
+        .actions{
+            margin-top: 8px;
+        }
+
+        .distance {
+            background: #fdfdfd;
+            color: #000000;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+    }
+}
